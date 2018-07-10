@@ -13,11 +13,11 @@ class DebugDrawable : Drawable() {
     var drawCount = 0
 
     override fun draw(canvas: Canvas?) {
+        drawCount++
         canvas?.apply {
             drawColor(if (isVisible) 0x3300ff00 else 0x33ff0000)
             drawText("visible=$isVisible, drawn=$drawCount", bounds.left + 10f, bounds.centerY().toFloat(), paint)
         }
-        drawCount++
     }
 
     override fun setAlpha(alpha: Int) {
